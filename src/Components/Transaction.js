@@ -13,7 +13,10 @@ function Transaction({ transaction, index }) {
                 {transaction.amount}
             </td>
             <td>
-                <Link to={`/transaction/${index}`}>✏️</Link>
+                {transaction.from}
+            </td>
+            <td>
+                <Link to={`/transactions/${index}`}>✏️</Link>
             </td>
         </tr>
     );

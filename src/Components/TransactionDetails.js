@@ -22,40 +22,53 @@ function TransactionDetails(props) {
              }
         );
     }, [index, history]);
-    
+
+    // const date = "February 14, 2021";
+    // const name = "School Supplies";
+    // const amount = 1200;
+    // const from = "Cousins gift for school";
+
     const handleDelete = () => {
-        return (
-            <article>
-                <h5>
-                    {transaction.date}
-                </h5>
-                <h5>
-                    <span>
-                        <a href={transaction.name}>{transaction.name}</a>
-                    </span>{" "}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </h5>
-                <h5>
-                    {transaction.amount}
-                </h5>
-                <h5>
-                    {transaction.from}
-                </h5>
-                <div className="showNavigation">
-                    <div>
-                        {" "}
-                        <Link to={`/transactions/${index}/edit`}>
-                            <button>Edit</button>
-                        </Link>
-                    </div>
-                    <div>
-                        {" "}
-                        <button onClick={handleDelete}>Delete</button>
-                    </div>
-                </div>
-            </article>
-        )
+
     }
+
+    return (
+        <article>
+            <h5>
+
+                {transaction.date}
+            </h5>
+            <h5>
+                <span>
+                    <a href={transaction.name}>{transaction.name}</a>
+                </span>{" "}
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </h5>
+            <h5>
+                {transaction.amount}
+            </h5>
+            <h5>
+                {transaction.from}
+            </h5>
+            <div className="showNavigation">
+                <div>
+                   <Link to={"/transactions"}>
+                       <button>Back</button>
+                   </Link>
+                </div>
+                <div>
+                    {" "}
+                    <Link to={"/transactions/:index/edit"}>
+                        <button>Edit</button>
+                    </Link>
+                </div>
+                <div>
+                    {" "}
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
+            </div>
+        </article>
+    )
 };
 
 export default withRouter(TransactionDetails);

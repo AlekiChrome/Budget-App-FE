@@ -53,4 +53,4 @@ function TransactionNewForm(props) {
    );
 };
 
-export default withRouter(TransactionNewForm);
+export default withRouter(TransactionNewForm)

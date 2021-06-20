@@ -62,11 +62,13 @@ function App() {
   };
 
   // * Get list of transactios for this application
+  // * (Kind of like a componentDidMount)
   useEffect(() => {
     axios
     .get(`${API_BASE}/transactions`)
     .then(
-      (response) => setTransactions(response.data),
+      (response) =>
+      setTransactions(response.data),
       (error) => console.log("get", error)
       )
       .catch((c) => console.warn("catch", c));

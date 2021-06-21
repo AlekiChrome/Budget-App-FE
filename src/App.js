@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+import "./index.css";
 import { apiURL } from "./util/apiURL";
 
 // * Pages
@@ -31,6 +32,7 @@ function App() {
       )
       .catch((c) => console.warn("catch", c));
   };
+
 
   const deleteTransaction = (index) => {
     axios
@@ -88,11 +90,11 @@ function App() {
             <Route path="/transactions/new">
               <New addTransaction={addTransaction} />
             </Route>
-            <Route exact path="/transactions/:index">
-              <Show transactions={transactions} deleteTransaction={deleteTransaction}   />
-            </Route>
             <Route path="/transactions/:index/edit">
               <Edit transactions={transactions} updateTransaction={updateTransaction} />
+            </Route>
+            <Route path="/transactions/:index">
+              <Show transactions={transactions} deleteTransaction={deleteTransaction} />
             </Route>
             <Route path="*">
               <FourOFour />

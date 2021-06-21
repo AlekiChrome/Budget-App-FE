@@ -22,9 +22,17 @@ function TransactionNewForm(props) {
    return (
        <div className="New">
            <form onSubmit={handleSubmit}>
+               <label htmlFor="date">Date:</label>
+               <input
+                id="date"
+                onChange={handleTextChange}
+                placeholder="Date"
+                required
+               />
+               <br />
                <label htmlFor="name">Name:</label>
                <input
-                value={transaction.name}
+                id="name"
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Name"
@@ -32,23 +40,24 @@ function TransactionNewForm(props) {
                />
                <label htmlFor="amount">Amount:</label>
                <input
-                value={transaction.amount}
+                id="amount"
                 type="number"
-                onchange={handleTextChange}
+                onChange={handleTextChange}
                 placeholder="Amount"
                 required
                />
                <label htmlFor="from">From:</label>
                <input
-                value={transaction.from}
+                id="from"
                 type="text"
-                onchange={handleTextChange}
+                onChange={handleTextChange}
                 placeholder="From"
                 required
                />
                <br />
                <input type="submit" />
            </form>
+
        </div>
    );
 };

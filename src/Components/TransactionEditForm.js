@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
-import axios from "axios";
-
-
-import { apiURL} from "../util/apiURL";
-
-const API_BASE = apiURL();
 
 function TransactionEditForm(props) {
     let { index } = useParams();
@@ -22,12 +16,6 @@ function TransactionEditForm(props) {
         setTransaction({ ...transaction, [event.target.id]: event.target.value })
     }
 
-    useEffect(() => {
-        axios.get(`${API_BASE}/transactions/${index}`).then(
-            (response) => setTransaction(response.data),
-            (error) => history.push(`/not-found`)
-        );
-    }, [index, history]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -38,35 +26,43 @@ function TransactionEditForm(props) {
     return (
         <div className="Edit">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="date">Date:</label>
                 <input
-                    value={transaction.name}
+                    id="date"
                     type="text"
                     onChange={handleTextChange}
-                    placeholder="Name"
+                    placeholder={transaction.date}
+                    required
+                />
+                <label htmlFor="name">Name:</label>
+                <input
+                    id="name"
+                    type="text"
+                    onChange={handleTextChange}
+                    placeholder={transaction.name}
                     required
               />
               <label htmlFor="amount">Amount:</label>
                <input
-                    value={transaction.amount}
+                    id="amount"
                     type="number"
-                    onchange={handleTextChange}
-                    placeholder="Amount"
+                    onChange={handleTextChange}
+                    placeholder={transaction.amount}
                     required
                />
                <label htmlFor="from">From:</label>
                <input
-                    value={transaction.from}
+                    id="from"
                     type="text"
-                    onchange={handleTextChange}
-                    placeholder="From"
+                    onChange={handleTextChange}
+                    placeholder={transaction.from}
                     required
                />
                <br />
                <input type="submit" />
                </form>
-               <Link to={`/transactions/${index}`}>
-                   <button>Nevermind!</button>
+               <Link to={`/transactions`}>
+                   <button>Back</button>
                </Link>
         </div>
     );

@@ -23,25 +23,18 @@ function TransactionDetails(props) {
         );
     }, [index, history]);
 
-    // const date = "February 14, 2021";
-    // const name = "School Supplies";
-    // const amount = 1200;
-    // const from = "Cousins gift for school";
-
     const handleDelete = () => {
 
     }
 
     return (
-        <article>
+        <section>
             <h5>
-
                 {transaction.date}
             </h5>
             <h5>
-                <span>
-                    <a href={transaction.name}>{transaction.name}</a>
-                </span>{" "}
+                <a href={transaction.name}>{transaction.name}</a>
+                {" "}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </h5>
             <h5>
@@ -58,7 +51,7 @@ function TransactionDetails(props) {
                 </div>
                 <div>
                     {" "}
-                    <Link to={"/transactions/:index/edit"}>
+                    <Link to={`/transactions/${index}/edit`}>
                         <button>Edit</button>
                     </Link>
                 </div>
@@ -67,7 +60,7 @@ function TransactionDetails(props) {
                     <button onClick={handleDelete}>Delete</button>
                 </div>
             </div>
-        </article>
+        </section>
     )
 };
 

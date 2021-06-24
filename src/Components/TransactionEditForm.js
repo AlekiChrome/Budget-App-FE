@@ -19,8 +19,9 @@ function TransactionEditForm(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(transaction, index);
         props.updateTransaction(transaction, index);
-        history.push(`/transactions/${index}`);
+        history.push(`/transactions/`);
     };
 
     return (
@@ -29,6 +30,7 @@ function TransactionEditForm(props) {
                 <label htmlFor="date">Date:</label>
                 <input
                     id="date"
+                    className="input"
                     type="text"
                     onChange={handleTextChange}
                     placeholder={transaction.date}

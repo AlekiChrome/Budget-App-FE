@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
     return (
         <nav>
-            <h1>Smart Budgetter</h1>
+            <Link to="/">
+                <h1>Smart Budgetter</h1>
+            </Link>
             <h1>
-                <Link to="/transactions">Transactions</Link>
+                <Link className="trans-index" to="/transactions">Transactions</Link>
             </h1>
-            {/* <a class="bt more-bt" href="javascript:void(0)">
-                <span class="fl"></span><span class="sfl"></span><span class="cross"></span><i></i>
+            <a className="bt more-bt" >
                 <Link to="/transactions/new">
+                <span className="fl"></span><span className="sfl"></span><span className="cross"></span><i></i>
                     <p>Add New Transaction</p>
                 </Link>
 
-            </a> */}
-            <button className="new-btn">
-                <Link to="/transactions/new">New Transaction</Link>
-            </button>
+            </a>
         </nav>
     );
 };

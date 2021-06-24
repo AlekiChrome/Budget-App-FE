@@ -20,45 +20,56 @@ function TransactionNewForm(props) {
    };
 
    return (
-       <div className="New">
+       <div className="wrapper">
+       <div className="new-form">
+           <div className="input-fields">
            <form onSubmit={handleSubmit}>
-               <label htmlFor="date">Date:</label>
+
                <input
                 id="date"
+                className="input"
                 onChange={handleTextChange}
-                placeholder="Date"
+                placeholder="Date (Month/Day/Year)"
                 required
                />
                <br />
-               <label htmlFor="name">Name:</label>
+
                <input
                 id="name"
+                className="input"
                 type="text"
                 onChange={handleTextChange}
                 placeholder="Name"
                 required
                />
-               <label htmlFor="amount">Amount:</label>
+
                <input
                 id="amount"
+                className="input"
                 type="number"
                 onChange={handleTextChange}
                 placeholder="Amount"
                 required
                />
-               <label htmlFor="from">From:</label>
+
                <input
                 id="from"
+                className="input"
                 type="text"
                 onChange={handleTextChange}
                 placeholder="From"
                 required
                />
-               <br />
-               <input type="submit" />
-           </form>
 
+               <br />
+
+            <input type="Submit" />
+
+
+           </form>
+           </div>
        </div>
+    </div>
    );
 };
 

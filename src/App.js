@@ -50,10 +50,12 @@ function App() {
   };
 
   const updateTransaction = (updatedTransaction, index) => {
+    console.log(API_BASE);
     axios
       .put(`${API_BASE}/transactions/${index}`, updatedTransaction)
       .then(
         (response) => {
+          console.log(response.data)
           const updateArray = [...transactions];
           updateArray[index] = updatedTransaction;
           setTransactions(updateArray)
@@ -69,12 +71,13 @@ function App() {
     axios
     .get(`${API_BASE}/transactions`)
     .then(
-      (response) =>
-      setTransactions(response.data),
-      (error) => console.log("get", error)
-      )
+      (response) => {
+      const { data } = response
+      setTransactions(data)
+
+      })
       .catch((c) => console.warn("catch", c));
-  }, []);
+  }, [transactions]);
   return (
     <div className="App">
       <Router>
@@ -94,7 +97,7 @@ function App() {
               <Edit transactions={transactions} updateTransaction={updateTransaction} />
             </Route>
             <Route path="/transactions/:index">
-              <Show transactions={transactions} deleteTransaction={deleteTransaction} />
+              <Show transactions={transactions} deleteTransaction={deleteTransaction} updateTransaction={updateTransaction}/>
             </Route>
             <Route path="*">
               <FourOFour />

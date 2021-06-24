@@ -1,28 +1,25 @@
 import Transaction from "./Transaction";
 
 function Transactions({ transactions }) {
-    
+
     return (
         <div className="Transactions">
             <section>
-                <table>
-                    <thead>
+                {/* <table>
                         <tr>
                             <th></th>
-                            <th>
-                                <th>Date</th>
-                                <th>Name</th>
-                                <th>Amount</th>
-                                <th>From</th>
-                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
-                    </thead>
-                    <tbody>
+                    <tbody> */}
+
                         {transactions.map((transaction, index) => {
                             return <Transaction key={index} transaction={transaction} index={index} />
                         })}
-                    </tbody>
-                </table>
+                    
+                    {/* </tbody>
+                </table> */}
             </section>
         </div>
     );

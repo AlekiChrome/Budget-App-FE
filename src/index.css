@@ -1,8 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 * {
  margin: 0;
+ padding: 0;
+ box-shadow: border-box;
+ outline: none;
+}
+
+.Home {
+  z-index: 1;
+  height: "100vh";
+}
+
+body {
+  background-image: url('/src/assets/smartbudget2.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Staatliches', cursive;
+  background-color: rgb(20, 20, 20);
+  color: whitesmoke;
 }
 
 nav {
+  font-family: 'Staatliches', cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   background: rgb(49, 47, 47);
   display: flex;
   justify-content: space-between;
@@ -13,17 +35,78 @@ nav {
   color: whitesmoke;
 }
 
+.trans-index {
+  border-right: 2px solid #ffd700;
+  border-bottom: 2px solid #ffd700;
+  padding: 17px 29px 15px 31px;
+}
+
+.trans-index:hover {
+  border-right: 2px solid Whitesmoke;
+  border-bottom: 2px solid whitesmoke;
+  padding: 17px 29px 15px 31px;
+  color: #ffd700;
+}
+
 nav a:hover {
-  color: whitesmoke;
+  color: #ffd700;
+}
+
+.ab {
+  font-family: 'Staatliches', cursive;
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.ab:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: 100%;
+  background-color: rgb(49, 47, 47);
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+.ab:hover:before {
+  transform: scaleY(0)
+}
+
+.ab:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: 100%;
+  background-color: rgb(49, 47, 47);
+  transition: 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+.ab:hover:after {
+  transform: scaleY(0)
+}
+
+
+.ab span {
+  position: relative;
+  z-index: 3;
 }
 
 .bt {
   width: 100px;
   cursor: pointer;
   position: relative;
-  font-family: "Roboto";
+  font-family: 'Staatliches', cursive;;
   text-transform: uppercase;
-  color: #503af6;
+  color: #ffd700;
   letter-spacing: 0.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -36,10 +119,10 @@ nav a:hover {
 }
 
 .more-bt {
-  border-right: 2px solid #503af6;
-  border-bottom: 2px solid #503af6;
+  border-right: 2px solid #ffd700;
+  border-bottom: 2px solid #ffd700;
   padding: 17px 29px 15px 31px;
-  border-color: #503af6;
+  border-color: #ffd700;
 }
 
 .more-bt p {
@@ -61,7 +144,7 @@ font-size: 14px;
 .more-bt:after, .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   -webkit-transition: .5s;
   transition: .5s;
@@ -79,7 +162,7 @@ font-size: 14px;
 .more-bt:after, .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   -webkit-transition: .5s;
   transition: .5s;
@@ -87,7 +170,7 @@ font-size: 14px;
 }
 
 ::selection {
-  background: #503af6;
+  background: #ffd700;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -103,7 +186,7 @@ font-size: 14px;
 .more-bt:after, .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   -webkit-transition: .5s;
   transition: .5s;
@@ -116,7 +199,7 @@ font-size: 14px;
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: #ffd700;
   top: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -130,7 +213,7 @@ font-size: 14px;
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: #ffd700;
   top: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -140,7 +223,7 @@ font-size: 14px;
 
 .more-bt .sfl {
   z-index: 1;
-  background: #4431D1;
+  background: #ffd700;
   -webkit-transition: .7s;
   transition: .7s;
 }
@@ -231,7 +314,7 @@ font-size: 14px;
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   margin: -10px -1px;
   left: 50%;
@@ -244,7 +327,7 @@ font-size: 14px;
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   margin: 0px -1px;
   left: 50%;
@@ -256,7 +339,7 @@ font-size: 14px;
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: #ffd700;
   position: absolute;
   margin: -10px 0px -10px 8px;
   left: 50%;
@@ -299,7 +382,7 @@ font-size: 14px;
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: #ffd700;
   top: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -320,7 +403,7 @@ font-size: 14px;
 
 .more-bt .sfl {
   z-index: 1;
-  background: #4431D1;
+  background: #ffd700;
   -webkit-transition: .7s;
   transition: .7s;
 }
@@ -395,7 +478,41 @@ a {
   color: rgb(109, 103, 103);
 }
 
-table {
+.table-container {
+  padding: 0 10%;
+  margin: 40px auto 0;
+}
+
+.table1 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table1 thead {
+  background-color: gold;
+  color: rgb(109, 103, 103);
+}
+
+.table1 thead tr th {
+  font-size: 16px;
+  letter-spacing: 0.35px;
+  opacity: 1;
+  padding: 10px;
+  vertical-align: top;
+  border: 1px solid gold;
+}
+
+.table1 tbody tr td {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  color: whitesmoke;
+  background-color: rgb(109, 103, 103);
+  padding: 8px;
+  text-align: center;
+  border: 1px solid gold;
+}
+
+/* table {
   width: 50%;
   margin: auto;
 }
@@ -427,10 +544,81 @@ textarea {
 
 input[type="submit"] {
   width: 30%;
-}
+} */
 
 .showNavigation {
   display: flex;
   justify-content: space-around;
   width: 50%;
+}
+
+.Index {
+  text-align: center;
+}
+
+.Chart {
+  display: flex;
+  align-content: center;
+}
+
+.Show {
+  text-align: center;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 20px;
+}
+
+.new-form {
+  display: flex;
+  max-width: 550px;
+  margin: 0 auto;
+  background: #ffd900;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0, 0, 10px, rgba(0, 0, 0, 0.13);
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+  width: 48%;
+}
+
+.input-fields .input {
+  margin: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid rgba(107, 104, 104, 0.582);
+  padding: 10px;
+  width: 100%;
+  color: rgb(5, 5, 5);
+}
+
+::-webkit-input-placeholder {
+  color: rgba(32, 31, 31, 0.582);
+};
+
+::-moz-input-placeholder {
+  color: rgba(245, 245, 245, 0.582);
+}
+
+input[type="submit"] {
+  font-family: 'Staatliches', cursive;
+  background: rgb(109, 103, 103);
+  color: whitesmoke;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: rgb(15, 15, 15);
+  color: #ffd900;
 }

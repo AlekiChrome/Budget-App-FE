@@ -24,7 +24,8 @@ function TransactionDetails(props) {
     }, [index, history]);
 
     const handleDelete = () => {
-
+        deleteTransaction(index)
+        history.push(`/transactions/`);
     }
 
     return (
@@ -33,12 +34,16 @@ function TransactionDetails(props) {
                 {transaction.date}
             </h5>
             <h5>
-                <a href={transaction.name}>{transaction.name}</a>
+                {transaction.name}
                 {" "}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </h5>
             <h5>
-                {transaction.amount}
+                <p>Monthly Budget: ${transaction.monthlyBudget}</p>
+
+            </h5>
+            <h5>
+                ${transaction.amount}
             </h5>
             <h5>
                 {transaction.from}
@@ -46,18 +51,18 @@ function TransactionDetails(props) {
             <div className="showNavigation">
                 <div>
                    <Link to={"/transactions"}>
-                       <button>Back</button>
+                       <button class="ab"><span>Back</span></button>
                    </Link>
                 </div>
                 <div>
                     {" "}
                     <Link to={`/transactions/${index}/edit`}>
-                        <button>Edit</button>
+                        <button class="ab"><span>Edit</span></button>
                     </Link>
                 </div>
                 <div>
                     {" "}
-                    <button onClick={handleDelete}>Delete</button>
+                    <button class="ab" onClick={handleDelete}><span>Delete</span></button>
                 </div>
             </div>
         </section>
